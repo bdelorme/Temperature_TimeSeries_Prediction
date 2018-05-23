@@ -1,21 +1,68 @@
 # Samsung Coding Challenge 
-### Author: Bertrand Delorme
-### Date: 23/05/2018
 
-I have implemented a Random Forest algorithm with Python3 to predict the temperature of a subway station at time "h+1" based on historical values from the beginning of time to "h".
+** Author: Bertrand Delorme **
+** Date: 23/05/2018 **
 
-## Project structure
-- data contains the raw historical dataset
-- notebook contains a jupyter notebook showing the exploration process (this is where I justify my implementation choices)
-- src contains the source code (modules).
+## General
 
-## Set-up instructions
-The dependencies needed to run the experiment are defined in [config.yml](config.yml).
+### Goal of the project
 
-## Experiment
-Given a dataset with historical data from the beginning of time to "h", you can get a prediction for the next hour, "h+1", by simply doing: 
+Predicting the temperature of a subway station at time *h+1* based on historical data from the beginning of time to *h*.
+
+### Dataset
+
+The data set is provided by RATP ([link](https://data.ratp.fr)) under open data Etalab license. The data set contains data coming from a subway station in csv format. It has 7 features: day and time of measurement, temperature, humidity, particulates concentration and concentration of 3 chemical tracers (NO, NO2, CO2). 
+
+### Implementation choices
+
+Two implementations have been tested to predict the temperature at *h+1*:
+- a random forest ensemble algorithm based on the value of temperature at *h* and *h-1*, the hour of the day, and the day of the month.
+- a recurrent neural network with LSTM based on the value of the temperature in the last *50h*.
+
+## Installation
+
+### Requirements
+
+The dependencies needed to run the experiment are:
+- scikit-learn
+- jupyter
+- pandas
+- keras 
+
+### Setup instructions
+
+We suggest using [Anaconda](https://www.anaconda.com/) to create a conda environment with the required dependencies using: 
 ```bash
-python predict.py path_to_historical_dataset
+cd Samsung_Coding_Challenge
+conda env create -f config.yml
 ```
-This function prints the prediction at time "h+1", and store it in a file *result.txt*.
+
+## Project Overview
+
+### Libraries used
+
+- numpy for efficient data structures and functions for scientific computing.
+- pandas for data manipulation and data analysis.
+- matplotlib for data visualization.
+- scikit-learn for efficient implementation of machine learning algorithms.
+- keras with tensorflow backend for RNN architecture. 
+
+### Architecture
+
+- `data/`: contains the raw historical dataset.
+- `src/`: contains the source code to make the prediction.
+- `config.yml`: conda config file.
+. `predict`: executable to get the prediction.
+- `exploration.ipynb`: jupyter notebook showing the exploration process and justification of implementation choices.
+
+## How it works
+
+Given a dataset with historical data until time *h*, you get a prediction for time *h+1* by simply doing: 
+```bash
+./predict path_to_historical_dataset
+```
+This function prints the prediction at time *h+1*. To store the result in a file *result.txt*, do:
+```bash
+./predict path_to_historical_dataset > result.txt
+```
 

@@ -1,8 +1,7 @@
 dependencies:
  - python=3.5
- - numpy
- - scipy
  - scikit-learn
  - jupyter
- - matplotlib
  - pandas
+ pip:
+  - keras
