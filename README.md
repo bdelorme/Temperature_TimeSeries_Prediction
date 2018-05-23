@@ -1,8 +1,8 @@
 # Samsung Coding Challenge 
 
-** Author: Bertrand Delorme **
+**Author: Bertrand Delorme**
 
-** Date: 23/05/2018 **
+**Date: 23/05/2018**
 
 ## General
 
@@ -25,10 +25,12 @@ Two implementations have been tested to predict the temperature at *h+1*:
 ### Requirements
 
 The dependencies needed are:
+
 - scikit-learn
 - jupyter
 - pandas
 - keras 
+
 as shown in [config.yml](config.yml).
 
 ### Setup instructions
@@ -63,8 +65,10 @@ Given a dataset with historical data until time *h*, you get a prediction for ti
 ```bash
 ./predict path_to_historical_dataset
 ```
+
 This function prints the prediction at time *h+1*. To store the result in a file *result.txt*, do:
 ```bash
 ./predict path_to_historical_dataset > result.txt
 ```
 
+We suggest that you first go over the jupyter notebook to understand the choices made.

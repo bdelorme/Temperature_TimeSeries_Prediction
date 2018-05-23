@@ -1,7 +1,7 @@
+name: Samsung_Coding_Challenge
 dependencies:
- - python=3.5
- - scikit-learn
- - jupyter
- - pandas
- pip:
-  - keras
+- scikit-learn
+- jupyter
+- pandas
+pip:
+ - keras
