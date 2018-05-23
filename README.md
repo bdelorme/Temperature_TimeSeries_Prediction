@@ -26,9 +26,11 @@ Two implementations have been tested to predict the temperature at *h+1*:
 
 The dependencies needed are:
 
+- numpy
+- scipy
+- pandas
 - scikit-learn
 - jupyter
-- pandas
 - keras 
 
 as shown in [config.yml](config.yml).
@@ -39,6 +41,7 @@ We suggest using [Anaconda](https://www.anaconda.com/) to create a conda environ
 ```bash
 cd Samsung_Coding_Challenge
 conda env create -f config.yml
+source activate Samsung_Coding_Challenge
 ```
 
 ## Project Overview
@@ -66,7 +69,7 @@ Given a dataset with historical data until time *h*, you get a prediction for ti
 ./predict path_to_historical_dataset
 ```
 
-This function prints the prediction at time *h+1*. To store the result in a file *result.txt*, do:
+This should last less than a minute and print the prediction at time *h+1*. To store the result in a file *result.txt*, do:
 ```bash
 ./predict path_to_historical_dataset > result.txt
 ```

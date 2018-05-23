@@ -3,7 +3,7 @@
 import sys
 
 from src.random_forest import RandomForestModel
-from src.process_data import read_raw_data, preprocess_RF, split_features_label
+from src.process_data import read_raw_data, preprocess_RF
 
 if len(sys.argv) != 2:
     print('Error: predict expects one argument (raw data file)')
@@ -11,10 +11,10 @@ if len(sys.argv) != 2:
 
 data = read_raw_data(sys.argv[1])
 
-data_RF, X_last = preprocess_RF(data)
+X, y, X_last = preprocess_RF(data)
 
 model_RF = RandomForestModel()
-model_RF.train(split_features_label(data_RF))
+model_RF.train(X, y)
 prediction_RF = model_RF.predict(X_last)
 
 print('RF prediction: {}'.format(prediction_RF))

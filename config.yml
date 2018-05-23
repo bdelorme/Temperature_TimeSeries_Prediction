@@ -1,7 +1,11 @@
 name: Samsung_Coding_Challenge
+
 dependencies:
-- scikit-learn
-- jupyter
-- pandas
-pip:
- - keras
+ - python=3.4
+ - numpy
+ - scipy
+ - pandas
+ - scikit-learn
+ - jupyter
+ - pip:
+     - keras==2.0.0
