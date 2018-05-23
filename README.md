@@ -1,17 +1,18 @@
 # Samsung Coding Challenge 
 
 ** Author: Bertrand Delorme **
+
 ** Date: 23/05/2018 **
 
 ## General
 
 ### Goal of the project
 
-Predicting the temperature of a subway station at time *h+1* based on historical data from the beginning of time to *h*.
+Predicting the temperature of a subway station at time *h+1* based on historical data from the beginning of time to time *h*.
 
 ### Dataset
 
-The data set is provided by RATP ([link](https://data.ratp.fr)) under open data Etalab license. The data set contains data coming from a subway station in csv format. It has 7 features: day and time of measurement, temperature, humidity, particulates concentration and concentration of 3 chemical tracers (NO, NO2, CO2). 
+The dataset is provided by RATP ([link](https://data.ratp.fr)) under open data Etalab license and contains air property measurements from a subway station in csv format. It has 7 features: day and time of measurement, temperature, humidity, particulates concentration and concentration of 3 chemical tracers (NO, NO2, CO2). 
 
 ### Implementation choices
 
@@ -23,15 +24,16 @@ Two implementations have been tested to predict the temperature at *h+1*:
 
 ### Requirements
 
-The dependencies needed to run the experiment are:
+The dependencies needed are:
 - scikit-learn
 - jupyter
 - pandas
 - keras 
+as shown in [config.yml](config.yml).
 
 ### Setup instructions
 
-We suggest using [Anaconda](https://www.anaconda.com/) to create a conda environment with the required dependencies using: 
+We suggest using [Anaconda](https://www.anaconda.com/) to create a conda environment with the required dependencies as: 
 ```bash
 cd Samsung_Coding_Challenge
 conda env create -f config.yml
@@ -52,7 +54,7 @@ conda env create -f config.yml
 - `data/`: contains the raw historical dataset.
 - `src/`: contains the source code to make the prediction.
 - `config.yml`: conda config file.
-. `predict`: executable to get the prediction.
+- `predict`: executable to get the prediction.
 - `exploration.ipynb`: jupyter notebook showing the exploration process and justification of implementation choices.
 
 ## How it works
