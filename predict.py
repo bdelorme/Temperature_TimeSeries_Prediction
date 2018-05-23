@@ -3,7 +3,8 @@ sys.path.insert(0, "../src/")
 from src.random_forest import RandomForestModel
 from src.dataset import Dataset
 
-raw_data_file = 'data/qualite-de-lair-mesuree-dans-la-station-franklin-d-roosevelt_date_sorted.csv'
+#raw_data_file = 'data/qualite-de-lair-mesuree-dans-la-station-franklin-d-roosevelt_date_sorted.csv'
+raw_data_file = sys.argv[1]
 
 data = Dataset(raw_data_file)
 data.preprocess()
