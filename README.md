@@ -18,7 +18,9 @@ The dataset is provided by RATP ([link](https://data.ratp.fr)) under open data E
 
 Two implementations have been tested to predict the temperature at *h+1*:
 - a random forest ensemble algorithm based on the value of temperature at *h* and *h-1*, the hour of the day, and the day of the month.
-- a recurrent neural network with LSTM based on the value of the temperature in the last *50h*.
+- a Seasonal AutoRegressive Integrated Moving Average (SARIMA) algorithm. 
+
+As the random forest algorithm performs better in our experiments, we use it as finale response for the coding challenge.
 
 ## Installation
 
@@ -31,7 +33,7 @@ The dependencies needed are:
 - pandas
 - scikit-learn
 - jupyter
-- keras 
+- statsmodels 
 
 as shown in [config.yml](config.yml).
 
@@ -51,8 +53,8 @@ source activate Samsung_Coding_Challenge
 - numpy for efficient data structures and functions for scientific computing.
 - pandas for data manipulation and data analysis.
 - matplotlib for data visualization.
-- scikit-learn for efficient implementation of machine learning algorithms.
-- keras with tensorflow backend for RNN architecture. 
+- scikit-learn for Random Forest implementation.
+- statsmodels for Seasonal Arima implementation.
 
 ### Architecture
 
@@ -74,4 +76,10 @@ This should last less than a minute and print the prediction at time *h+1*. To s
 ./predict path_to_historical_dataset > result.txt
 ```
 
-We suggest that you first go over the jupyter notebook to understand the choices made.
+We suggest that you first go over the jupyter [notebook](exploration.ipynb) to understand the choices made.
+
+## Improvements to do
+
+- test files
+- Random Forest in Fourier Space
+- implementation of RNN with LSTM

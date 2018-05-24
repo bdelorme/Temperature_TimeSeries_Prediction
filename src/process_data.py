@@ -22,7 +22,7 @@ def split_train_test(X, y, prop_train=0.8):
     return X_train, X_test, y_train, y_test
 
 def preprocess_RF(dframe):
-    dframe_RF = dframe.drop(['NO','NO2','CO2','PM10', 'HUMI'], axis=1)
+    dframe_RF = dframe.drop(['NO','NO2','CO2','PM10','HUMI'], axis=1)
     dframe_RF['hour_of_day'] = dframe_RF.index.hour
     dframe_RF['day_of_month'] = dframe_RF.index.day
     dframe_RF['TEMP-1'] = dframe_RF['TEMP'].shift(1)
@@ -30,4 +30,9 @@ def preprocess_RF(dframe):
     dframe_RF.dropna(inplace=True)
     X, y = split_features_label(dframe_RF)
     return X, y, X_last
+
+def preprocess_AR(dframe):
+    dframe_AR = dframe.drop(['NO','NO2','CO2','PM10','HUMI','TEMP+1'], axis=1)
+    dframe_AR.dropna(inplace=True)
+    return dframe_AR
 

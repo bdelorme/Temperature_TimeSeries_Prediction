@@ -17,5 +17,5 @@ model_RF = RandomForestModel()
 model_RF.train(X, y)
 prediction_RF = model_RF.predict(X_last)
 
-print('RF prediction: {}'.format(prediction_RF))
+print('prediction: {}'.format(prediction_RF))
 

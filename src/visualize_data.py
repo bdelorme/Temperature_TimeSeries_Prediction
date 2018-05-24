@@ -1,5 +1,6 @@
 import pandas as pd
 from pandas.plotting import autocorrelation_plot
+from statsmodels.tsa.seasonal import seasonal_decompose
 from collections import OrderedDict
 import matplotlib.pyplot as plt
 import datetime as dt
@@ -45,3 +46,23 @@ def plot_prediction(y_train, y_test, y_pred_train, y_pred_test,
     plt.xlabel("Date")
     plt.ylabel("TEMP")
     plt.xlim([date_lim_inf, date_lim_sup])
+
+def decompose_plots(dframe):
+    decomposition = seasonal_decompose(dframe.dropna()['TEMP'].values, freq=30*24)
+    trend = decomposition.trend
+    seasonal = decomposition.seasonal
+    residual = decomposition.resid
+    plt.subplot(411)
+    plt.plot(dframe['TEMP'], label='Original')
+    plt.legend(loc='best')
+    plt.subplot(412)
+    plt.plot(trend, label='Trend')
+    plt.legend(loc='best')
+    plt.subplot(413)
+    plt.plot(seasonal,label='Seasonality')
+    plt.legend(loc='best')
+    plt.subplot(414)
+    plt.plot(residual, label='Residuals')
+    plt.legend(loc='best')
+    plt.tight_layout()
+

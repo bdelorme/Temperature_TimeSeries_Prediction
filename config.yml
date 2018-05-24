@@ -7,5 +7,4 @@ dependencies:
  - pandas
  - scikit-learn
  - jupyter
- - pip:
-     - keras==2.0.0
+ - statsmodels
