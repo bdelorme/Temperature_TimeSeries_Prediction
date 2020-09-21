@@ -1,4 +1,4 @@
-name: Samsung_Coding_Challenge
+name: Temperature_TS_Prediction
 
 dependencies:
  - python=3.4
