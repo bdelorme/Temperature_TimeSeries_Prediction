@@ -1,4 +1,4 @@
-# Samsung Coding Challenge 
+# Temperature TimeSeries Prediction
 
 **Author: Bertrand Delorme**
 
@@ -41,9 +41,9 @@ as shown in [config.yml](config.yml).
 
 We suggest using [Anaconda](https://www.anaconda.com/) to create a conda environment with the required dependencies as: 
 ```bash
-cd Samsung_Coding_Challenge
+cd Temperature_TS_Prediction
 conda env create -f config.yml
-source activate Samsung_Coding_Challenge
+source activate Temperature_TS_Prediction
 ```
 
 ## Project Overview
